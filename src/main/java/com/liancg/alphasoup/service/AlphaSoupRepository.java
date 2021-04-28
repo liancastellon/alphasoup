@@ -1,6 +1,10 @@
 package com.liancg.alphasoup.service;
 
-import java.util.ArrayList;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,13 +34,16 @@ public class AlphaSoupRepository {
   }
 
   private List<String> getWordList() {
-    final List<String> result = new ArrayList<>();
+    final Path path = Paths.get( "src/main/java/word-list.txt");
 
-    result.add( "aaaaaaaaaaa");
-    result.add( "bbbbbbbbb");
-    result.add( "cccccc");
-    result.add( "dddddddd");
-    result.add( "eeeeeeeeee");
+    List<String> result;
+
+    try {
+      result = Files.readAllLines( path, StandardCharsets.UTF_8);
+    }
+    catch (final IOException ex) {
+      throw new RuntimeException( ex);
+    }
 
     return result;
   }
