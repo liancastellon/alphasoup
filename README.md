@@ -1,14 +1,37 @@
 # Sopa de Letras
 Genera una sopa de letras aleatoria.
 
-## Clonar/ejecutar
+## Clonar el proyecto
 ```
 git clone https://github.com/liancastellon/alphasoup.git
+```
+
+## Ejecutar
+### Manualmente
 cd alphashoup
 ./gradlew bootRun
 ```
+O, generando el jar con todas las dependencias - para ejecutarlo directamente:
+
+```
+./gradlew bootJar
+cp build/libs/alphasoup-0.0.1-SNAPSHOT.jar <destdir>/<dest-name>.jar
+cd <destdir>
+java -jar <dest-name>.jar
+```
 
 El web service por defecto estará en `http://localhost:8080`
+
+## docker
+```
+docker build -t liancg-alphasoup .
+docker run -it -p 8080:8080 liancg-alphasoup
+```
+
+## docker-compose
+```
+docker-compose up
+```
 
 ## Uso del web service
 
