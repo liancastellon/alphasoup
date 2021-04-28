@@ -8,10 +8,11 @@ git clone https://github.com/liancastellon/alphasoup.git
 
 ## Ejecutar
 ### Manualmente
+```
 cd alphashoup
 ./gradlew bootRun
 ```
-O, generando el jar con todas las dependencias - para ejecutarlo directamente:
+O generando el `.jar` con todas las dependencias - para ejecutarlo directamente:
 
 ```
 ./gradlew bootJar
